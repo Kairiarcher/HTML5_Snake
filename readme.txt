@@ -1,7 +1,8 @@
 Instruction:
 	- use arrow keys on the keyboard to control the snake
 	- play it just like rest of snake games.
-
+	- play it on Codepen: http://codepen.io/yosabuson/pen/YpmBVp
+		
 Compatibility:
 	Chrome:any
 	Edge:any
