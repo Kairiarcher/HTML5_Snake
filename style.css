@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+#gameboard {
+	border: solid black;
+    text-align: center;
+}
