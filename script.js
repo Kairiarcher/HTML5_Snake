@@ -6,26 +6,28 @@ var colorBody = "blue";
 var colorHead = "red";
 var colorOutline = "white";
 
+// Initial snake states
+var moveDirection = {
+    Stop: 0,
+    Up: 1,
+    Down: 2,
+    Left: 3,
+    Right: 4
+};
+var startingSnakeLength = 10;
+var snakeCellWidth = 10;
+var snakeMovingSpeed = 10;
+var startPos = 30;
+
 // Get canvas info
 var gameCanvas = $("#gameboard")[0];
 var boardContext = gameCanvas.getContext("2d");
 boardContext.translate(0.5, 0.5);
 var gameCanvasWidth = $("#gameboard").width();
 var gameCanvasHeight = $("#gameboard").height();
+var borderWidthUnit = gameCanvasWidth / snakeCellWidth
+var borderHeightunit = gameCanvasHeight / snakeCellWidth
 var gameTimerID;
-
-// Initial snake states
-var moveDirection = {
-	Stop: 0,
-	Up: 1,
-	Down: 2,
-	Left: 3,
-	Right: 4
-};
-var startingSnakeLength = 10;
-var snakeCellWidth = 10;
-var snakeMovingSpeed = 10;
-var startPos = 30;
 
 // Snake variables
 var snakeArray = [];
@@ -140,8 +142,8 @@ var detectCollisionWithFood = function() {
 
 // Detects if snake's head is colliding with or outside of canvas border and
 // ends the game if so.
-var detectCollisionWithBorder = function() {
-	if ((snakeHead.x >= 80 || snakeHead.x <= -1) || (snakeHead.y >= 60 || snakeHead.y <= -1)) {
+var detectCollisionWithBorder = function () {
+	if ((snakeHead.x >= borderWidthUnit || snakeHead.x <= -1) || (snakeHead.y >= borderHeightunit || snakeHead.y <= -1)) {
 		endGameReset();
 	}
 }
